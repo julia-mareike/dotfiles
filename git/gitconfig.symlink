@@ -4,19 +4,31 @@
 [hub]
         protocol = https
 [alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
+        # co = checkout
+        # promote = !$ZSH/bin/git-promote
+        # wtf     = !$ZSH/bin/git-wtf
+        # rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
 [color]
-        diff = auto
         status = auto
         branch = auto
         ui = true
+[color "diff"]
+        meta = yellow
+        frag = magenta bold
+        commit = yellow bold
+        old = red bold
+        new = green bold
+        whitespace = red reverse
+[color "diff-highlight"]
+        oldNormal = red bold
+        oldHighlight = red bold 52
+        newNormal = green bold
+        newHighlight = green bold 22
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        editor = code
+        pager = diff-so-fancy | less --tabs=4 -RFX
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -33,3 +45,5 @@
         default = simple
 [credential]
 	helper = osxkeychain
+[diff-so-fancy]
+	stripLeadingSymbols = false

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+npm install --global \
+  nodemon \
+  eslint \
+  prettier \
+  redis-commander
